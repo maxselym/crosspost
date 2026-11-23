@@ -14,9 +14,19 @@ class Settings(BaseSettings):
     vk_group_domain: str
     vk_api_version: str
 
+    tg_bot_token: SecretStr
+    tg_chat_id: int
+
     @field_validator("vk_access_token")
     @classmethod
     def validate_access_token(cls, value: SecretStr) -> SecretStr:
         if not value.get_secret_value().strip():
             raise ValueError("VK_ACCESS_TOKEN must not be empty")
+        return value
+
+    @field_validator("tg_bot_token")
+    @classmethod
+    def validate_bot_token(cls, value: SecretStr) -> SecretStr:
+        if not value.get_secret_value().strip():
+            raise ValueError("TG_BOT_TOKEN must not be empty")
         return value
