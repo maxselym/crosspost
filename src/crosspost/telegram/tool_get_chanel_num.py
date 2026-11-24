@@ -1,4 +1,5 @@
 import asyncio
+
 from aiogram import Bot
 
 from crosspost.config import Settings
