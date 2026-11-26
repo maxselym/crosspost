@@ -40,6 +40,12 @@ def normalize_post(post: dict[str, Any], vk_group_id: int) -> dict[str, Any]:
             original_url = _get_photo_url(data)
         elif media_type == "link":
             original_url = data.get("url")
+        elif media_type == "video":
+            video_owner_id = data.get("owner_id")
+            video_id = data.get("id")
+
+            if video_owner_id is not None and video_id is not None:
+                original_url = f"https://vk.com/video{video_owner_id}_{video_id}"
 
         media.append(
             {

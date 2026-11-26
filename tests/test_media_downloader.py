@@ -4,7 +4,7 @@ import httpx
 import pytest
 import respx
 
-from crosspost.vk.download_sample_photo import MediaDownloader
+from crosspost.vk.media import MediaDownloader
 
 
 @pytest.mark.asyncio

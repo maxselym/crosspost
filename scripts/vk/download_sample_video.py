@@ -5,8 +5,8 @@ import yt_dlp
 
 # Корень проекта: C:\Dev\crosspost
 # Пример использования:
-# uv run python -m crosspost.vk.download_sample_video "https://vkvideo.ru/video-227892646_456239081"
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
+# uv run python scripts/vk/download_sample_video.py "https://vkvideo.ru/video-227892646_456239081"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DOWNLOAD_DIR = PROJECT_ROOT / "media" / "vk"
 
 
