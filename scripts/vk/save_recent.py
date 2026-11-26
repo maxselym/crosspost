@@ -15,7 +15,7 @@ async def main() -> None:
     ) as vk:
         posts = await vk.get_wall_posts(
             owner_id=-settings.vk_group_id,
-            count=3,
+            count=10,
         )
 
     async with Database(Path("data/crosspost.db")) as db:
